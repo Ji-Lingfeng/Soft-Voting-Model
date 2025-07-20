@@ -57,9 +57,6 @@ ensemble.fit(X_train, y_train)
 y_pred_test = ensemble.predict(X_test)
 y_pred_prob = ensemble.predict_proba(X_test)[:, 1]  # 获取预测概率
 
-std_dev = np.std(y_pred_prob)
-print(f"Predicted Probability Standard Deviation: {std_dev:.3f}")
-
 # 计算混淆矩阵及评价指标
 cm = confusion_matrix(y_true=y_test, y_pred=y_pred_test)
 TP = cm[1, 1]
